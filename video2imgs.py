@@ -34,7 +34,7 @@ else:
 
         # 각 프레임을 사진으로 저장
         if frame_index % framerate == 0:
-            frame_filename = f'{output_directory}/frame_{frame_index:04d}.jpg'
+            frame_filename = f'{output_directory}/frame_{cnt:04d}.jpg'
             cv2.imwrite(frame_filename, frame)
             
             cnt += 1
