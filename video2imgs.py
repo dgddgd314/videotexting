@@ -4,15 +4,24 @@ import math
 
 # 영상 파일 경로
 video_path = r"C:\Users\82103\Desktop\imagetext\sample.mp4"
-output_directory = r"c:\Users\82103\Desktop\imagetext\sampleimage"
 
-framerate = 10 # save 1 image for every (framerate) frames
-cnt = 0
-
-# 영상 파일이 존재하는지 확인
 if not os.path.exists(video_path):
     raise FileNotFoundError(f"Video file '{video_path}' not found.")
 else:
+    # 이미지 파일 만들기
+    folder_path = os.path.dirname(video_path)
+    output_directory = os.path.join(folder_path, f"image")
+
+    # Output_directory 폴더가 있는지?
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+        print(f"Image Folder created successfully.")
+    else:
+        print(f"Folder already exists.")
+        
+    framerate = 6 # save 1 image for every (framerate) frames
+    cnt = 0
+
     # 영상 파일 열기
     cap = cv2.VideoCapture(video_path)
     
