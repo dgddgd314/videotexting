@@ -1,5 +1,4 @@
-### videotexting
+# videotexting
 > I'll change video to text. 
 It finished! Ez work.
-
-# few codes were from chatGPT
+### few codes were from chatGPT
